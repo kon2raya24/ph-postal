@@ -1,6 +1,6 @@
 {
   "name": "@ph-dev-utils/postal",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Philippine ZIP/postal codes with zero-dependency lookup helpers. Joins to @ph-dev-utils/core cities/municipalities. Data from GeoNames (CC BY 4.0).",
   "license": "MIT",
   "type": "module",

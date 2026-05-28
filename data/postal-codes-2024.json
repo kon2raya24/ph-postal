@@ -4,9 +4,14 @@
     "source_url": "https://download.geonames.org/export/zip/PH.zip",
     "license": "CC BY 4.0 — © GeoNames (https://www.geonames.org)",
     "join": "cityMunCode joined to PSA Q4 2024 PSGC via @ph-dev-utils/core (name + province context)",
+    "multizip_topup": [
+      "Wikipedia 'ZIP codes in the Philippines' (lists Davao City as 8000 + 8016–8026)",
+      "philippineszipcode.com / worldpostalcodes.org (Davao City 8016–8026)"
+    ],
     "verified_on": "2026-05-28",
-    "count": 2037,
-    "matched_to_psgc": 1922,
+    "count": 2048,
+    "matched_to_psgc": 1933,
+    "topup_entries": 11,
     "schema": {
       "zip": "4-digit PHLPost ZIP code (not unique — multi-ZIP cities + shared codes exist)",
       "cityMun": "city/municipality (or district/area) name as listed by GeoNames",
@@ -13721,6 +13726,14 @@
       "area": null
     },
     {
+      "zip": "8016",
+      "cityMun": "Davao City",
+      "cityMunCode": "112402",
+      "province": "1124",
+      "region": "11",
+      "area": null
+    },
+    {
       "zip": "8017",
       "cityMun": "Bunawan",
       "cityMunCode": "160302",
@@ -13729,9 +13742,33 @@
       "area": null
     },
     {
+      "zip": "8017",
+      "cityMun": "Davao City",
+      "cityMunCode": "112402",
+      "province": "1124",
+      "region": "11",
+      "area": null
+    },
+    {
       "zip": "8018",
       "cityMun": "Calinan",
       "cityMunCode": null,
+      "province": "1124",
+      "region": "11",
+      "area": null
+    },
+    {
+      "zip": "8018",
+      "cityMun": "Davao City",
+      "cityMunCode": "112402",
+      "province": "1124",
+      "region": "11",
+      "area": null
+    },
+    {
+      "zip": "8019",
+      "cityMun": "Davao City",
+      "cityMunCode": "112402",
       "province": "1124",
       "region": "11",
       "area": null
@@ -13746,6 +13783,14 @@
     },
     {
       "zip": "8020",
+      "cityMun": "Davao City",
+      "cityMunCode": "112402",
+      "province": "1124",
+      "region": "11",
+      "area": null
+    },
+    {
+      "zip": "8020",
       "cityMun": "Mandug",
       "cityMunCode": null,
       "province": "1124",
@@ -13754,8 +13799,24 @@
     },
     {
       "zip": "8021",
+      "cityMun": "Davao City",
+      "cityMunCode": "112402",
+      "province": "1124",
+      "region": "11",
+      "area": "Talomo"
+    },
+    {
+      "zip": "8021",
       "cityMun": "Matina",
       "cityMunCode": null,
+      "province": "1124",
+      "region": "11",
+      "area": null
+    },
+    {
+      "zip": "8022",
+      "cityMun": "Davao City",
+      "cityMunCode": "112402",
       "province": "1124",
       "region": "11",
       "area": null
@@ -13770,8 +13831,24 @@
     },
     {
       "zip": "8023",
+      "cityMun": "Davao City",
+      "cityMunCode": "112402",
+      "province": "1124",
+      "region": "11",
+      "area": null
+    },
+    {
+      "zip": "8023",
       "cityMun": "Talomo",
       "cityMunCode": null,
+      "province": "1124",
+      "region": "11",
+      "area": null
+    },
+    {
+      "zip": "8024",
+      "cityMun": "Davao City",
+      "cityMunCode": "112402",
       "province": "1124",
       "region": "11",
       "area": null
@@ -13786,8 +13863,24 @@
     },
     {
       "zip": "8025",
+      "cityMun": "Davao City",
+      "cityMunCode": "112402",
+      "province": "1124",
+      "region": "11",
+      "area": "Toril"
+    },
+    {
+      "zip": "8025",
       "cityMun": "Toril",
       "cityMunCode": null,
+      "province": "1124",
+      "region": "11",
+      "area": null
+    },
+    {
+      "zip": "8026",
+      "cityMun": "Davao City",
+      "cityMunCode": "112402",
       "province": "1124",
       "region": "11",
       "area": null

@@ -11,7 +11,12 @@ final class PostalCodesTest extends TestCase
 {
     public function testCountAll(): void
     {
-        $this->assertSame(2037, PostalCodes::count());
+        $this->assertSame(2048, PostalCodes::count());
+    }
+
+    public function testDavaoMultiZipTopup(): void
+    {
+        $this->assertSame(12, PostalCodes::count(['cityMunCode' => '112402'])); // 8000 + 8016–8026
     }
 
     public function testCountByRegion(): void

@@ -58,7 +58,7 @@ listPostalCodes({ province: '0722' });      // Cebu province
 ### `countPostalCodes(filter?): number`
 
 ```ts
-countPostalCodes();                  // 2037
+countPostalCodes();                  // 2048
 countPostalCodes({ region: '13' });  // 360
 ```
 

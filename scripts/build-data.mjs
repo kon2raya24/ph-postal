@@ -69,6 +69,9 @@ function normProv(name) {
 const provByName = new Map();
 for (const p of provinces) provByName.set(normProv(p.name), { code: p.code, region: p.region });
 
+// code -> city entry (for the multi-ZIP top-up overlay)
+const cityByCode = new Map(cities.map((c) => [c.code, c]));
+
 // normalized city name -> [cityEntry...]
 const cityByName = new Map();
 for (const c of cities) {
@@ -178,6 +181,39 @@ for (const r of rows) {
   });
 }
 
+// ---- merge hand-curated multi-ZIP top-up overlay -----------------------------
+// GeoNames under-covers some multi-ZIP cities (e.g. Davao City). The overlay adds
+// the missing ZIPs, keyed by exact PSGC cityMunCode; region/province come from core.
+const TOPUP = join(__dirname, 'topup-multizip.json');
+let toppedUp = 0;
+let topupSource = null;
+try {
+  const topup = JSON.parse(readFileSync(TOPUP, 'utf-8'));
+  topupSource = topup._meta?.sources ?? null;
+  const seen = new Set(out.map((e) => `${e.zip}|${e.cityMunCode}`));
+  for (const t of topup.entries) {
+    const key = `${t.zip}|${t.cityMunCode}`;
+    if (seen.has(key)) continue;
+    const city = cityByCode.get(t.cityMunCode);
+    if (!city) {
+      console.warn(`topup skip: cityMunCode ${t.cityMunCode} not in core (zip ${t.zip})`);
+      continue;
+    }
+    out.push({
+      zip: t.zip,
+      cityMun: t.cityMun ?? city.name,
+      cityMunCode: t.cityMunCode,
+      province: city.province ?? null,
+      region: city.region,
+      area: t.area ?? null,
+    });
+    seen.add(key);
+    toppedUp++;
+  }
+} catch (err) {
+  if (err.code !== 'ENOENT') throw err;
+}
+
 // stable sort: zip, then city name
 out.sort((a, b) => (a.zip < b.zip ? -1 : a.zip > b.zip ? 1 : a.cityMun.localeCompare(b.cityMun)));
 
@@ -188,9 +224,11 @@ const payload = {
     source_url: 'https://download.geonames.org/export/zip/PH.zip',
     license: 'CC BY 4.0 — © GeoNames (https://www.geonames.org)',
     join: 'cityMunCode joined to PSA Q4 2024 PSGC via @ph-dev-utils/core (name + province context)',
+    multizip_topup: topupSource,
     verified_on: VERIFIED_ON,
     count: out.length,
     matched_to_psgc: matched,
+    topup_entries: toppedUp,
     schema: {
       zip: '4-digit PHLPost ZIP code (not unique — multi-ZIP cities + shared codes exist)',
       cityMun: 'city/municipality (or district/area) name as listed by GeoNames',
@@ -221,6 +259,7 @@ console.log(`dropped (instit.) : ${droppedInstitutional}`);
 console.log(`entries out       : ${out.length}`);
 console.log(`matched to PSGC   : ${matched} (${((matched / out.length) * 100).toFixed(1)}%)`);
 console.log(`  NCR Manila dist : ${manilaDistricts} -> 133900`);
+console.log(`multi-ZIP top-up  : +${toppedUp} entries`);
 console.log(`unmatched (null)  : ${unmatched.length}`);
 console.log(`null region rows  : ${out.filter((e) => e.region === null).length}`);
 console.log(`distinct regions  : ${[...new Set(out.map((e) => e.region))].filter(Boolean).sort().join(',')}`);

@@ -2,6 +2,18 @@
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-05-28
+
+### Added
+
+- **Multi-ZIP city top-up.** GeoNames under-covers some large cities; added a hand-curated overlay (`scripts/topup-multizip.json`, merged by `scripts/build-data.mjs` and keyed by exact PSGC `cityMunCode`). **Davao City** now carries its full range — `8000` + `8016`–`8026` (12 ZIPs, was 1). Total entries 2,037 → 2,048.
+- The overlay derives `region`/`province` from the `cityMunCode` via `@ph-dev-utils/core` and dedupes against the GeoNames base, so future multi-ZIP additions (incl. community PRs) are a one-line entry.
+
+### Notes
+
+- `area` is left `null` where a reliable ZIP→district mapping could not be confidently sourced — the city-level assignment is the verified claim (e.g. `8021`→Talomo, `8025`→Toril are noted; the rest are city-level only).
+- The three-ZIP municipalities (Calamba, Cavite City, Dasmariñas, Mabalacat, Mariveles, Island Garden City of Samal) remain on the v0.x follow-up list pending per-city PHLPost verification.
+
 ## [0.1.0] - 2026-05-28
 
 Initial release. Philippine ZIP/postal codes for JS + PHP, joined to PSGC cities/municipalities.

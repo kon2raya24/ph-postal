@@ -2,7 +2,7 @@
 
 ## `postal-codes-2024.json`
 
-Philippine ZIP/postal codes (2,037 entries), derived from the **GeoNames PH postal dump** (CC BY 4.0) and joined to the **PSA Q4 2024 PSGC** cities/municipalities via [`@ph-dev-utils/core`](https://github.com/kon2raya24/ph-dev-utils).
+Philippine ZIP/postal codes (2,048 entries), derived from the **GeoNames PH postal dump** (CC BY 4.0), joined to the **PSA Q4 2024 PSGC** cities/municipalities via [`@ph-dev-utils/core`](https://github.com/kon2raya24/ph-dev-utils), plus a hand-curated multi-ZIP top-up (`../scripts/topup-multizip.json`).
 
 - Source: [GeoNames PH.zip](https://download.geonames.org/export/zip/PH.zip) — © GeoNames, CC BY 4.0 (see `../NOTICE`)
 - Join: `cityMunCode` matched by place name + province context

@@ -8,7 +8,7 @@ import {
 
 describe('countPostalCodes', () => {
   it('counts all entries', () => {
-    expect(countPostalCodes()).toBe(2037);
+    expect(countPostalCodes()).toBe(2048);
   });
   it('counts by region (NCR = 13)', () => {
     expect(countPostalCodes({ region: '13' })).toBe(360);
@@ -18,6 +18,9 @@ describe('countPostalCodes', () => {
   });
   it('counts by province', () => {
     expect(countPostalCodes({ province: '0722' })).toBe(54); // Cebu province
+  });
+  it('Davao City has its full multi-ZIP range (top-up)', () => {
+    expect(countPostalCodes({ cityMunCode: '112402' })).toBe(12); // 8000 + 8016–8026
   });
 });
 

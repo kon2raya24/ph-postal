@@ -25,7 +25,7 @@ PostalCodes::findByCity('Davao City');
 // List / count, filter by { zip, cityMunCode, province, region }
 PostalCodes::list(['region' => '13']);          // all NCR
 PostalCodes::list(['cityMunCode' => '072217']);  // all Cebu City ZIPs
-PostalCodes::count();                            // 2037
+PostalCodes::count();                            // 2048
 PostalCodes::count(['region' => '13']);          // 360
 ```
 

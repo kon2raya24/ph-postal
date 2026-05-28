@@ -30,7 +30,7 @@ findPostalCodesByZip('1000');   // [{ zip:'1000', cityMun:'Manila', cityMunCode:
 findPostalCodesByCity('Davao City');
 listPostalCodes({ region: '13' });        // all NCR ZIPs
 listPostalCodes({ cityMunCode: '072217' }); // all Cebu City ZIPs
-countPostalCodes();                        // 2037
+countPostalCodes();                        // 2048
 ```
 
 ## PHP usage
@@ -41,7 +41,7 @@ use PhDevUtils\Postal\PostalCodes;
 PostalCodes::findByZip('1000');                  // [['zip'=>'1000','cityMunCode'=>'133900', ...]]
 PostalCodes::findByCity('Davao City');
 PostalCodes::list(['region' => '13']);
-PostalCodes::count();                            // 2037
+PostalCodes::count();                            // 2048
 ```
 
 ## Joining to PSGC (the point)

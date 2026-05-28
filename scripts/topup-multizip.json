@@ -1,0 +1,28 @@
+{
+  "_meta": {
+    "purpose": "Hand-curated top-up for multi-ZIP cities that GeoNames under-covers. Merged over the GeoNames base by scripts/build-data.mjs (deduped by zip+cityMunCode).",
+    "sources": [
+      "Wikipedia 'ZIP codes in the Philippines' (lists Davao City as 8000 + 8016–8026)",
+      "philippineszipcode.com / worldpostalcodes.org (Davao City 8016–8026)"
+    ],
+    "verified_on": "2026-05-28",
+    "notes": [
+      "Entries are keyed by exact PSGC cityMunCode (NOT name) to avoid the Calamba/Samal name ambiguity.",
+      "area is left null where a reliable ZIP->district mapping could not be confidently sourced — the city-level assignment is the verified claim.",
+      "province/region are derived from the cityMunCode via @ph-dev-utils/core at build time."
+    ]
+  },
+  "entries": [
+    { "zip": "8016", "cityMunCode": "112402", "cityMun": "Davao City", "area": null },
+    { "zip": "8017", "cityMunCode": "112402", "cityMun": "Davao City", "area": null },
+    { "zip": "8018", "cityMunCode": "112402", "cityMun": "Davao City", "area": null },
+    { "zip": "8019", "cityMunCode": "112402", "cityMun": "Davao City", "area": null },
+    { "zip": "8020", "cityMunCode": "112402", "cityMun": "Davao City", "area": null },
+    { "zip": "8021", "cityMunCode": "112402", "cityMun": "Davao City", "area": "Talomo" },
+    { "zip": "8022", "cityMunCode": "112402", "cityMun": "Davao City", "area": null },
+    { "zip": "8023", "cityMunCode": "112402", "cityMun": "Davao City", "area": null },
+    { "zip": "8024", "cityMunCode": "112402", "cityMun": "Davao City", "area": null },
+    { "zip": "8025", "cityMunCode": "112402", "cityMun": "Davao City", "area": "Toril" },
+    { "zip": "8026", "cityMunCode": "112402", "cityMun": "Davao City", "area": null }
+  ]
+}
