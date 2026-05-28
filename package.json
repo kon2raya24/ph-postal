@@ -1,0 +1,15 @@
+{
+  "name": "ph-postal",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Philippine ZIP/postal codes for JS and PHP, joined to PSGC cities/municipalities. Companion to ph-dev-utils.",
+  "workspaces": [
+    "packages/js"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace=@ph-dev-utils/postal",
+    "test": "npm run test --workspace=@ph-dev-utils/postal",
+    "build:data": "node scripts/build-data.mjs"
+  },
+  "license": "MIT"
+}

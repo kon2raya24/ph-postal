@@ -1,0 +1,21 @@
+ph-postal — data attribution
+=============================
+
+The bundled postal-code dataset (data/postal-codes-2024.json) is derived from
+the GeoNames Philippines postal-code dump:
+
+  https://download.geonames.org/export/zip/PH.zip
+
+GeoNames data is licensed under the Creative Commons Attribution 4.0 License
+(CC BY 4.0): https://creativecommons.org/licenses/by/4.0/
+
+  © GeoNames — https://www.geonames.org
+
+This package adds a derived `cityMunCode` join to the PSA Q4 2024 PSGC
+cities/municipalities (via @ph-dev-utils/core) and excludes geography-less
+institutional/PO-box ZIP codes. The transform is reproducible from
+scripts/build-data.mjs over scripts/geonames-PH.txt.
+
+ZIP data is community-sourced (GeoNames) and reconciled against the PHLPost
+ZIP-code locator (https://phlpost.gov.ph). It is NOT an official PHLPost feed —
+verify against PHLPost for authoritative, production-critical use.

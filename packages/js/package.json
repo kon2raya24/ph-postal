@@ -1,0 +1,42 @@
+{
+  "name": "@ph-dev-utils/postal",
+  "version": "0.1.0",
+  "description": "Philippine ZIP/postal codes with zero-dependency lookup helpers. Joins to @ph-dev-utils/core cities/municipalities. Data from GeoNames (CC BY 4.0).",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "data",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": [
+    "philippines",
+    "filipino",
+    "zip",
+    "zipcode",
+    "postal-code",
+    "postcode",
+    "psgc",
+    "address"
+  ],
+  "devDependencies": {
+    "@ph-dev-utils/core": "^0.4.0",
+    "@types/node": "^20.11.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.5.0"
+  }
+}

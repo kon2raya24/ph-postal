@@ -1,0 +1,24 @@
+{
+  "name": "phdevutils/postal",
+  "description": "Philippine ZIP/postal codes with zero-dependency lookup helpers. Joins to phdevutils/core cities/municipalities. Data from GeoNames (CC BY 4.0).",
+  "type": "library",
+  "license": "MIT",
+  "keywords": ["philippines", "filipino", "zip", "zipcode", "postal-code", "postcode", "psgc", "address"],
+  "require": {
+    "php": ">=8.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10.0",
+    "phdevutils/core": "^0.4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "PhDevUtils\\Postal\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "PhDevUtils\\Postal\\Tests\\": "tests/"
+    }
+  }
+}
